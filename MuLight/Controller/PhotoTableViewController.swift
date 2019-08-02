@@ -9,15 +9,15 @@
 import UIKit
 import CoreData
 
-final class PhotoTableViewController: UITableViewController, MuLightContext {
+final class PhotoTableViewController: UITableViewController, MuLightContext, StoryboardInitializable {
     
-    static func storyboardInstance() -> PhotoTableViewController {
-        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-        guard let vc = sb.instantiateViewController(withIdentifier: "PhotoTableViewController") as? PhotoTableViewController else {
-            fatalError()
-        }
-        return vc
-    }
+//    static func storyboardInstance() -> PhotoTableViewController {
+//        let sb = UIStoryboard.init(name: "Main", bundle: nil)
+//        guard let vc = sb.instantiateViewController(withIdentifier: "PhotoTableViewController") as? PhotoTableViewController else {
+//            fatalError()
+//        }
+//        return vc
+//    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -15,6 +15,7 @@ final class Image: NSManagedObject {
     @NSManaged private(set) var caption: String
     @NSManaged private(set) var thumbnail: Data
     
+    @discardableResult
     static func insert(into context: NSManagedObjectContext,
                        caption: String,
                        date: Date = Date(),
@@ -23,7 +24,8 @@ final class Image: NSManagedObject {
         image.id = UUID().uuidString
         image.date = date
         image.caption = caption
-        image.thumbnail = ImageStore.thumbnail(for: photo)
+        image.thumbnail = photo.thumbnailData()
+        ImageStore.setImage(image: photo, forKey: image.id)
         
         return image
     }

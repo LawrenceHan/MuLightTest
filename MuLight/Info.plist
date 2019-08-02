@@ -41,5 +41,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>NSCameraUsageDescription</key>
+	<string>MuLight needs access to your camera to capture photo</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>MuLight needs access to your photo library to import photo</string>
 </dict>
 </plist>

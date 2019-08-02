@@ -68,13 +68,5 @@ class ImageStoreImpl {
     }()
 }
 
-// TODO: cut image
-extension ImageStoreImpl {
-    func thumbnail(for photo: UIImage, size: CGSize = CGSize(width: 50, height: 50)) -> Data {
-        
-        return Data()
-    }
-}
-
 // Single Instance
 let ImageStore = ImageStoreImpl()

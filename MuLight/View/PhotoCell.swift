@@ -10,13 +10,12 @@ import UIKit
 
 final class PhotoCell: UITableViewCell {}
 
-// TODO: change to use image store
 extension PhotoCell {
     func configure(for image: Image) {
-        // this can be easily refactored to SDWebImage or something else
-        imageView?.image = ImageStore.imageForKey(key: image.id)
+        imageView?.image = UIImage(data: image.thumbnail)
         textLabel?.text = image.caption
-        detailTextLabel?.text = dateFormatter.string(from: image.date)
+        let text = dateFormatter.string(from: image.date)
+        detailTextLabel?.text = text
     }
 }
 

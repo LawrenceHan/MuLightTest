@@ -93,20 +93,59 @@
             </objects>
             <point key="canvasLocation" x="1803" y="287"/>
         </scene>
-        <!--View Controller-->
+        <!--Photo Detail View Controller-->
         <scene sceneID="IGf-gL-e3c">
             <objects>
-                <viewController id="KoG-sN-16a" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PhotoDetailViewController" id="KoG-sN-16a" customClass="PhotoDetailViewController" customModule="MuLight" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="W2e-yz-Pke">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bOH-1Z-oCQ">
+                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="bOH-1Z-oCQ" firstAttribute="top" secondItem="HLb-bC-ecP" secondAttribute="top" id="Daa-XV-zeV"/>
+                            <constraint firstItem="HLb-bC-ecP" firstAttribute="trailing" secondItem="bOH-1Z-oCQ" secondAttribute="trailing" id="bLw-WD-2Jp"/>
+                            <constraint firstItem="HLb-bC-ecP" firstAttribute="bottom" secondItem="bOH-1Z-oCQ" secondAttribute="bottom" id="ckz-02-naS"/>
+                            <constraint firstItem="bOH-1Z-oCQ" firstAttribute="leading" secondItem="HLb-bC-ecP" secondAttribute="leading" id="qeJ-VM-FwZ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="HLb-bC-ecP"/>
                     </view>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="imageView" destination="bOH-1Z-oCQ" id="AmH-Ds-mSd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GTS-Q8-2fX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1803" y="-404"/>
+        </scene>
+        <!--Preview View Controller-->
+        <scene sceneID="VrB-DE-CTE">
+            <objects>
+                <viewController storyboardIdentifier="PreviewViewController" id="cHw-rw-ttm" customClass="PreviewViewController" customModule="MuLight" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fz2-a5-cmJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="prE-Iq-CPT">
+                                <rect key="frame" x="159" y="59" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="uJU-LL-ZDy"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qFf-hk-S3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1803" y="-1085"/>
         </scene>
     </scenes>
 </document>
