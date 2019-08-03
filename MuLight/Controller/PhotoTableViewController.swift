@@ -11,14 +11,6 @@ import CoreData
 
 final class PhotoTableViewController: UITableViewController, MuLightContext, StoryboardInitializable {
     
-//    static func storyboardInstance() -> PhotoTableViewController {
-//        let sb = UIStoryboard.init(name: "Main", bundle: nil)
-//        guard let vc = sb.instantiateViewController(withIdentifier: "PhotoTableViewController") as? PhotoTableViewController else {
-//            fatalError()
-//        }
-//        return vc
-//    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -26,21 +18,34 @@ final class PhotoTableViewController: UITableViewController, MuLightContext, Sto
     
     // MARK: Private
     
-    fileprivate var dataSource: TableViewDataSource<PhotoTableViewController>!
-//    fileprivate var observer: ManagedObjectObserver?
+    private var dataSource: TableViewDataSource<PhotoTableViewController>!
     
-    fileprivate func setupTableView() {
-        tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 50
-        tableView.register(PhotoCell.self, forCellReuseIdentifier: "PhotoCell")
+    private func setupTableView() {
         let request = Image.sortedFetchRequest
         let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: muLightContext, sectionNameKeyPath: nil, cacheName: nil)
         dataSource = TableViewDataSource(tableView: tableView, cellIdentifier: "PhotoCell", fetchedResultsController: controller, delegate: self)
     }
 }
 
+// MARK: - TableViewDataSourceDelegate
+
 extension PhotoTableViewController: TableViewDataSourceDelegate {
     func configure(_ cell: PhotoCell, for object: Image) {
         cell.configure(for: object)
+    }
+}
+
+// MARK: - TableView Delegate
+
+extension PhotoTableViewController {
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        defer {
+            tableView.deselectRow(at: indexPath, animated: true)
+
+        }
+        guard let detail = PhotoDetailViewController.storyboardInstance() else { return }
+        let image = dataSource.objectAtIndexPath(indexPath)
+        detail.image = image
+        navigationController?.pushViewController(detail, animated: true)
     }
 }

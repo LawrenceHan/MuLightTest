@@ -22,7 +22,7 @@
 		0263D00A22F352B5001F0E19 /* PhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263D00922F352B5001F0E19 /* PhotoCell.swift */; };
 		0263D00D22F40F24001F0E19 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263D00C22F40F24001F0E19 /* NavigationController.swift */; };
 		0263D01522F4193D001F0E19 /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263D01422F4193D001F0E19 /* ImageStore.swift */; };
-		0263D01922F44B0F001F0E19 /* Foundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263D01822F44B0F001F0E19 /* Foundation.swift */; };
+		0263D01922F44B0F001F0E19 /* MuLightFoundation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263D01822F44B0F001F0E19 /* MuLightFoundation.swift */; };
 		0263D02022F46F49001F0E19 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0263D01F22F46F49001F0E19 /* ImagePicker.swift */; };
 		02FED49422F499430021179B /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02FED49322F499430021179B /* PhotoDetailViewController.swift */; };
 /* End PBXBuildFile section */
@@ -58,7 +58,7 @@
 		0263D00C22F40F24001F0E19 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		0263D01422F4193D001F0E19 /* ImageStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 		0263D01622F4244C001F0E19 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		0263D01822F44B0F001F0E19 /* Foundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Foundation.swift; sourceTree = "<group>"; };
+		0263D01822F44B0F001F0E19 /* MuLightFoundation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuLightFoundation.swift; sourceTree = "<group>"; };
 		0263D01F22F46F49001F0E19 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		02FED49322F499430021179B /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PhotoDetailViewController.swift; path = ../../../../../../../System/Volumes/Data/Users/Hanguang/WorkSpace/Github_contribute/MuLight/MuLight/Controller/PhotoDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -108,7 +108,6 @@
 				0263D00122F34088001F0E19 /* Helper */,
 				0263CFF522F2E5E4001F0E19 /* Model */,
 				0263CFD222F2DDA1001F0E19 /* AppDelegate.swift */,
-				0263CFD622F2DDA1001F0E19 /* Main.storyboard */,
 				0263CFD922F2DDA3001F0E19 /* Assets.xcassets */,
 				0263CFDB22F2DDA3001F0E19 /* LaunchScreen.storyboard */,
 				0263CFDE22F2DDA3001F0E19 /* Info.plist */,
@@ -141,7 +140,7 @@
 				0263D00222F340A9001F0E19 /* TableViewDataSource.swift */,
 				0263D00422F34519001F0E19 /* Log.swift */,
 				0263D01422F4193D001F0E19 /* ImageStore.swift */,
-				0263D01822F44B0F001F0E19 /* Foundation.swift */,
+				0263D01822F44B0F001F0E19 /* MuLightFoundation.swift */,
 				0263D01F22F46F49001F0E19 /* ImagePicker.swift */,
 			);
 			path = Helper;
@@ -150,6 +149,7 @@
 		0263D00622F34EA5001F0E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0263CFD622F2DDA1001F0E19 /* Main.storyboard */,
 				0263D00922F352B5001F0E19 /* PhotoCell.swift */,
 			);
 			path = View;
@@ -275,7 +275,7 @@
 				0263CFFE22F3356E001F0E19 /* RootViewController.swift in Sources */,
 				0263CFFA22F2E966001F0E19 /* MuLight.xcdatamodeld in Sources */,
 				0263CFD322F2DDA1001F0E19 /* AppDelegate.swift in Sources */,
-				0263D01922F44B0F001F0E19 /* Foundation.swift in Sources */,
+				0263D01922F44B0F001F0E19 /* MuLightFoundation.swift in Sources */,
 				0263D00022F33E9B001F0E19 /* PhotoTableViewController.swift in Sources */,
 				0263D00322F340A9001F0E19 /* TableViewDataSource.swift in Sources */,
 				0263D00D22F40F24001F0E19 /* NavigationController.swift in Sources */,
@@ -445,6 +445,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KR9G98P8SN;
 				INFOPLIST_FILE = MuLight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -463,6 +464,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = KR9G98P8SN;
 				INFOPLIST_FILE = MuLight/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -11,7 +11,9 @@ import UIKit
 final class PhotoCell: UITableViewCell {}
 
 extension PhotoCell {
+
     func configure(for image: Image) {
+        imageView?.contentMode = .scaleAspectFill
         imageView?.image = UIImage(data: image.thumbnail)
         textLabel?.text = image.caption
         let text = dateFormatter.string(from: image.date)

@@ -12,15 +12,11 @@ import AVFoundation
 
 final class RootViewController: UIViewController, MuLightContext {
     
-    var imagePicer: ImagePicker!
-    private weak var saveAction: UIAlertAction?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         imagePicer = ImagePicker(self, delegate: self)
     }
     
-    // TODO: present photo picker
     @IBAction func takePhoto(_ sender: UIButton) {
         imagePicer.present()
     }
@@ -29,12 +25,20 @@ final class RootViewController: UIViewController, MuLightContext {
         guard let vc = PhotoTableViewController.storyboardInstance() else { return }
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    // MARK: - Private
+    
+    private var imagePicer: ImagePicker!
+    private weak var saveAction: UIAlertAction?
 }
 
 extension RootViewController: ImagePickerDelegate {
     func didSelect(image: UIImage?) {
         guard let image = image?.scaled() else { return }
-        
+        showNameAlert(image)
+    }
+    
+    private func showNameAlert(_ photo: UIImage) {
         let alert = UIAlertController(title: "Give photo a name", message: nil, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "Save", style: .default) { _ in
@@ -43,7 +47,9 @@ extension RootViewController: ImagePickerDelegate {
             }
             
             // Save to database
-            Image.insert(into: self.muLightContext, caption: caption, photo: image)
+            self.muLightContext.performChanges {
+                Image.insert(into: self.muLightContext, caption: caption, photo: photo)
+            }
         }
         ok.isEnabled = false
         

@@ -8,6 +8,8 @@
 
 import UIKit
 
+// MARK: - Foundation extension
+
 extension CGSize {
     
     func fitted(_ size: CGSize) -> CGSize {
