@@ -45,3 +45,9 @@ Though photos will be compressed to jpeg, it is still a good idea to maintain th
 ## The Solution
 
 Check mindmap diagram [here](MuLightDiagram.pdf)
+
+## Possible Improvment
+
+1. Unit Test, I've been using Kiwi (for Objective-C) and Quick (for Swift) for a while, I guided other developer to write unit test code. The reason I haven't written unit test for this project (yet) is because there's not mush cases needs to be covered. Maybe I could write a unit test for `UITextField` that checks text length or something else.
+2. Refactor PhotoDetailViewController to support gallery. `MWPhotoBrowser` does a great job, though it is old but a lot of famous gallery browse project are inspired by it.
+3. Refactor database to support multi-threading. Currently our database runs on main queue, that is fine. But if the app grows bigger and it needs to access database more frequently, you might consider to move database task from main queue to your custom database queue.
