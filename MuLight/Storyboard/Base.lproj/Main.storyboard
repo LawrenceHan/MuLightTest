@@ -49,17 +49,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eU9-YA-51S">
-                                <rect key="frame" x="65" y="170" width="76" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Take photo"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eU9-YA-51S">
+                                <rect key="frame" x="136" y="294" width="142" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="h7Z-or-BiA" eventType="touchUpInside" id="ml0-7F-0uD"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-pR-SEQ">
-                                <rect key="frame" x="246" y="170" width="90" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dfv-pR-SEQ">
+                                <rect key="frame" x="122" y="394" width="170" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="Show Photos"/>
                                 <connections>
                                     <action selector="showPhotos:" destination="h7Z-or-BiA" eventType="touchUpInside" id="ejc-mh-oPQ"/>
@@ -67,6 +67,12 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="dfv-pR-SEQ" firstAttribute="centerY" secondItem="aQ4-P3-NTr" secondAttribute="centerY" constant="50" id="BFY-C5-hAz"/>
+                            <constraint firstItem="eU9-YA-51S" firstAttribute="centerY" secondItem="aQ4-P3-NTr" secondAttribute="centerY" constant="-50" id="Gha-R0-B6V"/>
+                            <constraint firstItem="dfv-pR-SEQ" firstAttribute="centerX" secondItem="aQ4-P3-NTr" secondAttribute="centerX" id="Ytg-N5-guv"/>
+                            <constraint firstItem="eU9-YA-51S" firstAttribute="centerX" secondItem="aQ4-P3-NTr" secondAttribute="centerX" id="uOP-Oi-aGR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Vd9-zU-9c7"/>
                     </view>
                     <navigationItem key="navigationItem" title="MuLightTest" id="7rp-dZ-spu"/>
