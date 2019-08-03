@@ -8,4 +8,4 @@
 
 import UIKit
 
-final class NavigationController: UINavigationController {}
+final class NavigationController: UINavigationController, StoryboardInitializable {}

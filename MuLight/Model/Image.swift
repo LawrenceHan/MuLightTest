@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 
 final class Image: NSManagedObject {
+    
     @NSManaged private(set) var id: String
     @NSManaged private(set) var date: Date
     @NSManaged private(set) var caption: String

@@ -27,23 +27,23 @@ extension CGSize {
 
 extension UIImage {
     func thumbnailData(_ fitSize: CGSize = CGSize(width: 320, height: 320)) -> Data {
-        if let scaledImage = Scale(self, to: size.aspectFitted(fitSize)), let scaledData = scaledImage.jpegData(compressionQuality: 0.4) {
+        if let scaledImage = UIImage.scale(self, to: size.aspectFitted(fitSize)), let scaledData = scaledImage.jpegData(compressionQuality: 0.4) {
             return scaledData
         }
         return Data()
     }
     
     func scaled(_ maxSize: CGSize = CGSize(width: 1280, height: 1280)) -> UIImage? {
-        return Scale(self, to: size.aspectFittedOrSmaller(maxSize))
+        return UIImage.scale(self, to: size.aspectFittedOrSmaller(maxSize))
     }
-}
-
-func Scale(_ image: UIImage, to size: CGSize) -> UIImage? {
-    UIGraphicsBeginImageContextWithOptions(size, true, 1.0)
-    image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .copy, alpha: 1)
-    let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
-    UIGraphicsEndImageContext();
-    return scaledImage
+    
+    static func scale(_ image: UIImage, to size: CGSize) -> UIImage? {
+        UIGraphicsBeginImageContextWithOptions(size, true, 1.0)
+        image.draw(in: CGRect(x: 0, y: 0, width: size.width, height: size.height), blendMode: .copy, alpha: 1)
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext();
+        return scaledImage
+    }
 }
 
 // MARK: UIStoryboard support

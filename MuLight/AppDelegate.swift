@@ -27,8 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         CoreDataStack.createMuLightContainer { container in
             guard let container = container else { return }
             self.persistentContainer = container
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
-            guard let vc = storyboard.instantiateViewController(withIdentifier: "NavigationController") as? NavigationController
+            guard let vc = NavigationController.storyboardInstance()
                 else { fatalError("Cannot instantiate root view controller") }
             self.window?.rootViewController = vc
         }
