@@ -103,13 +103,13 @@
 		0263CFD122F2DDA1001F0E19 /* MuLight */ = {
 			isa = PBXGroup;
 			children = (
+				02BB3BDC22F56F5E0050AC83 /* Storyboard */,
 				0263D00B22F40F09001F0E19 /* Controller */,
 				0263D00622F34EA5001F0E19 /* View */,
 				0263D00122F34088001F0E19 /* Helper */,
 				0263CFF522F2E5E4001F0E19 /* Model */,
 				0263CFD222F2DDA1001F0E19 /* AppDelegate.swift */,
 				0263CFD922F2DDA3001F0E19 /* Assets.xcassets */,
-				0263CFDB22F2DDA3001F0E19 /* LaunchScreen.storyboard */,
 				0263CFDE22F2DDA3001F0E19 /* Info.plist */,
 			);
 			path = MuLight;
@@ -149,7 +149,6 @@
 		0263D00622F34EA5001F0E19 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0263CFD622F2DDA1001F0E19 /* Main.storyboard */,
 				0263D00922F352B5001F0E19 /* PhotoCell.swift */,
 			);
 			path = View;
@@ -164,6 +163,15 @@
 				02FED49322F499430021179B /* PhotoDetailViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		02BB3BDC22F56F5E0050AC83 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				0263CFD622F2DDA1001F0E19 /* Main.storyboard */,
+				0263CFDB22F2DDA3001F0E19 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

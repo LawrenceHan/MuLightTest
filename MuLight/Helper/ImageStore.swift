@@ -25,7 +25,7 @@ class ImageStoreImpl {
         cache.setObject(image, forKey: key as NSString)
         
         let url = imageURL(for: key)
-        guard let data = image.jpegData(compressionQuality: 0.5) else {
+        guard let data = image.jpegData(compressionQuality: 0.93) else {
             print("image.jpegData failed")
             return
         }

@@ -24,7 +24,7 @@ final class Image: NSManagedObject {
         image.id = UUID().uuidString
         image.date = date
         image.caption = caption
-        image.thumbnail = photo.thumbnailData(CGSize(width: 100, height: 100))
+        image.thumbnail = photo.thumbnailData(CGSize(width: 320, height: 320))
         ImageStore.setImage(image: photo, forKey: image.id)
         
         return image
