@@ -21,6 +21,7 @@ final class PhotoTableViewController: UITableViewController, MuLightContext, Sto
     private var dataSource: TableViewDataSource<PhotoTableViewController>!
     
     private func setupTableView() {
+        tableView.tableFooterView = UIView()
         let request = Image.sortedFetchRequest
         let controller = NSFetchedResultsController(fetchRequest: request, managedObjectContext: muLightContext, sectionNameKeyPath: nil, cacheName: nil)
         dataSource = TableViewDataSource(tableView: tableView, cellIdentifier: "PhotoCell", fetchedResultsController: controller, delegate: self)

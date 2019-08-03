@@ -15,8 +15,25 @@ final class PhotoDetailViewController: UIViewController, StoryboardInitializable
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let delete = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(deleteTouched))
+        navigationItem.rightBarButtonItem = delete
+        updateUI()
+    }
+    
+    // MARK: - Private
+    
+    private func updateUI() {
         guard let image = image else { return }
         title = image.caption
         imageView.image = ImageStore.imageForKey(key: image.id)
+    }
+    
+    @objc private func deleteTouched(_ sender: UIBarButtonItem) {
+        if let image = image {
+            image.managedObjectContext?.performChanges {
+                image.managedObjectContext?.delete(image)
+            }
+        }
+        navigationController?.popViewController(animated: true)
     }
 }
