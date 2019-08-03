@@ -43,3 +43,5 @@ An Image enity (or table) in our database should have:
 Though photos will be compressed to jpeg, it is still a good idea to maintain them in somewhere else (instead of database), and plus it can be easily extended to support third-party framework such as: `KingFisher` and `SDWebImage`.
 
 ## The Solution
+
+Check mindmap diagram [here](MuLightDiagram.pdf)
