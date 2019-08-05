@@ -1,5 +1,9 @@
 #  MuLight test project, for test only. All rights reserved
 
+## How to build
+
+Just change the `Team` to yours under `Signing` section for target `MuLight`. No third-party framework required.
+
 ## The Problem
 
 We would like you to build a simplified photo booth application which allows the user to take photos and see previously taken photos.
@@ -28,7 +32,7 @@ Another case is when user browse a gallery of photos, use oringial photo takes m
 *For time saving I don't save the photo to library, only save the photo as jpeg to local disk.*
 
 **A table view and a detail view:**
-This should be as simple as possible, but since we are using `Core Data` as our database, we should take advantage of it. Use `NSFetchedResultsController` as a datasource and combine some generic extension, will make it `Swiftfy` and `Reactive`.
+This should be as simple as possible, but since we are using `Core Data` as our database, we should take advantage of it. Use `NSFetchedResultsController` as a datasource and combine some generic extension, will make it more `Swiftfy` and `Reactive`.
 For detail view, I often use a custom transition animation combine with drag down gesture to give user a better *back to list* option. But for time saving I only provide a navigation back option.
 *(You can check my app [Baby](https://apps.apple.com/us/app/glow-baby-baby-toddler-log/id1077177456) for custom transition animtion)*
 
@@ -40,7 +44,7 @@ An Image enity (or table) in our database should have:
 4. thumbnail (Data), binary jpeg file. Since the thumbnail data is small, there's no need to put it somewhere else. So when loading a list of `Image` entity for tableView we can easily load thumbnails.
 
 **Image Store:**
-Though photos will be compressed to jpeg, it is still a good idea to maintain them in somewhere else (instead of database), and plus it can be easily extended to support third-party framework such as: `KingFisher` and `SDWebImage`.
+Though photos will be compressed to jpeg, it is still a good idea to maintain them in somewhere else (instead of database), and plus it can be easily extended to support third-party framework such as: `KingFisher` or `SDWebImage`.
 
 ## The Solution
 
@@ -48,6 +52,7 @@ Check mindmap diagram [here](MuLightDiagram.pdf)
 
 ## Possible Improvment
 
-1. Unit Test, I've been using Kiwi (for Objective-C) and Quick (for Swift) for a while, I guided other developer to write unit test code. The reason I haven't written unit test for this project (yet) is because there's not mush cases needs to be covered. Maybe I could write a unit test for `UITextField` that checks text length or something else.
-2. Refactor PhotoDetailViewController to support gallery. `MWPhotoBrowser` does a great job, though it is old but a lot of famous gallery browse project are inspired by it.
+1. Unit Test, I've been using Kiwi (for Objective-C) and Quick (for Swift) for a while, I guided other developer to write unit test code. The reason I haven't written unit test for this project (yet) is because there's not mush cases needs to be covered. Maybe I could write a unit test for `UITextField` that checks name text length or something else.
+2. Refactor PhotoDetailViewController to support gallery. So when user go to detail view, it allows user to browse all photos. `MWPhotoBrowser` does a great job, though it is old but a lot of famous gallery browse project are inspired by it.
 3. Refactor database to support multi-threading. Currently our database runs on main queue, that is fine. But if the app grows bigger and it needs to access database more frequently, you might consider to move database task from main queue to your custom database queue.
+4. Depends on business needs, always prepare for refactor 😂😂😂.

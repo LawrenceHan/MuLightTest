@@ -53,8 +53,7 @@ class ImageStoreImpl {
         let url = imageURL(for: key)
         do {
             try FileManager.default.removeItem(at: url)
-        }
-        catch {
+        } catch {
             print("Error removing the image from disk: \(error)")
         }
     }

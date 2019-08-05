@@ -12,7 +12,7 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    // Global static instance
+    // Global static instance, Unity style
     static var instance: AppDelegate!
     
     var window: UIWindow?

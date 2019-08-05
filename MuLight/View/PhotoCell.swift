@@ -16,8 +16,7 @@ extension PhotoCell {
         imageView?.contentMode = .scaleAspectFill
         imageView?.image = UIImage(data: image.thumbnail)
         textLabel?.text = image.caption
-        let text = dateFormatter.string(from: image.date)
-        detailTextLabel?.text = text
+        detailTextLabel?.text = dateFormatter.string(from: image.date)
     }
 }
 

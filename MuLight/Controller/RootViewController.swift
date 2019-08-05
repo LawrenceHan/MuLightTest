@@ -67,7 +67,6 @@ extension RootViewController: ImagePickerDelegate {
     }
     
     @objc func textFieldDidChange(_ textField: UITextField) {
-        let enabled = textField.text?.isEmpty ?? true
-        saveAction?.isEnabled = !enabled
+        saveAction?.isEnabled = !(textField.text?.isEmpty ?? true)
     }
 }

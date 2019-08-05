@@ -26,6 +26,7 @@ extension CGSize {
 // MARK: - UIImage Helper
 
 extension UIImage {
+    
     func thumbnailData(_ fitSize: CGSize = CGSize(width: 320, height: 320)) -> Data {
         if let scaledImage = UIImage.scale(self, to: size.aspectFitted(fitSize)), let scaledData = scaledImage.jpegData(compressionQuality: 0.4) {
             return scaledData
@@ -53,6 +54,7 @@ protocol StoryboardInitializable: class {
 }
 
 extension StoryboardInitializable where Self: UIViewController {
+    
     static func storyboardInstance() -> Self? {
         let sb = UIStoryboard(name: "Main", bundle: nil)
         guard let instance = sb.instantiateViewController(withIdentifier: String(describing: self)) as? Self else {
