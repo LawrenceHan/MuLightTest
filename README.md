@@ -22,7 +22,7 @@ When user selects “View Photos”, show a list view with the thumbnails, name 
 Basically we can accomplish this with 3 separated components: 
 1. Photo picker
 2. A table (list) view and a detail view
-3. Database, since the code test should not take too much of time, hence we should use `Core Data` as our database instead of build our own. 
+3. Database, ~~since the code test should not take too much of time, hence we should use `Core Data` as our database instead of build our own.~~ actually `Core Data` is much more convenient than I thought, I used to use `FMDB` to build my own database, but after finish this code test, I will give `Core Data` a shot.
 
 **Photo picker:**
 Normally after we take a photo we save it to user's photo library, then we retrive it back. We often resize the original photo, compress it to jpeg then save it to somewhere else.
