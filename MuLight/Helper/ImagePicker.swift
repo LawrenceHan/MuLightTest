@@ -69,8 +69,14 @@ class ImagePicker: NSObject {
     }
     
     private func handleDeniedCameraAuthorization(_ picker: UIViewController?) {
-        let alert = UIAlertController(title: "", message: "No camera permissions granted", preferredStyle: .alert)
+        let alert = UIAlertController(title: "No camera permissions granted", message: "", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(
+            title: "Open Settings", style: .cancel, handler: { _ in
+                if let url = URL(string: UIApplication.openSettingsURLString) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                }
+        }))
         picker?.present(alert, animated: true, completion: nil)
     }
 }
